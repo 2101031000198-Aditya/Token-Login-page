@@ -1,0 +1,42 @@
+<div class="employee-grid">
+  <table>
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <ng-container *ngIf="role === 'Admin'">
+          <th>Login ID</th>
+          <th>Job Title</th>
+          <th>Birth Date</th>
+          <th>Marital Status</th>
+          <th>Gender</th>
+          <th>Hire Date</th>
+          <th>Vacation Hours</th>
+          <th>Sick Leave Hours</th>
+          <th>Row GUID</th>
+          <th>Modified Date</th>
+        </ng-container>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let employee of employees">
+        <tr class="employee-card">
+          <td>{{ employee.employeeID }}</td>
+          <td>{{ employee.employeeName }}</td>
+          <ng-container *ngIf="role === 'Admin'">
+            <td>{{ employee.loginID }}</td>
+            <td>{{ employee.jobTitle }}</td>
+            <td>{{ employee.birthDate | date: 'yyyy-MM-dd' }}</td>
+            <td>{{ employee.maritalStatus }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>{{ employee.hireDate | date: 'yyyy-MM-dd' }}</td>
+            <td>{{ employee.vacationHours }}</td>
+            <td>{{ employee.sickLeaveHours }}</td>
+            <td>{{ employee.rowGuid }}</td>
+            <td>{{ employee.modifiedDate | date: 'yyyy-MM-dd' }}</td>
+          </ng-container>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

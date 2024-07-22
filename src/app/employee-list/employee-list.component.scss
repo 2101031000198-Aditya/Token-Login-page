@@ -1,0 +1,36 @@
+/* Table Styles */
+.employee-grid table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: Arial, sans-serif;
+}
+
+.employee-grid th,
+.employee-grid td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.employee-grid th {
+  background-color: #f2f2f2;
+}
+
+.employee-grid tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Conditional Styles for Admin Columns */
+.employee-grid th.admin,
+.employee-grid td.admin {
+  display: none;
+}
+
+/* Media Query for Admin Columns on Small Screens */
+@media screen and (min-width: 768px) {
+  .employee-grid th.admin,
+  .employee-grid td.admin {
+    display: table-cell;
+  }
+}
